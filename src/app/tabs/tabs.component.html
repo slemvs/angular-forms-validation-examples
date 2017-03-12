@@ -1,0 +1,24 @@
+<div>
+  <div class="tab-selector">
+    <ul class="nav nav-tabs">
+      <li *ngFor="let tab of tabs" [class.active]="tab.isActive">
+        <a (click)="tabSelector$.next(tab)">{{tab.title}}</a>
+      </li>
+    </ul>
+  </div>
+  <div class="tab-content">
+    <ng-content></ng-content>
+    <!--<div *ngIf="isTabVisible(1)" class="tab-pane" [ngClass]="{'active': isTabVisible(1)}">
+      <simple-form></simple-form>
+    </div>
+    <div *ngIf="isTabVisible(2)" class="tab-pane" [ngClass]="{'active': isTabVisible(2)}">
+      <complex-form></complex-form>
+    </div>
+    <div *ngIf="isTabVisible(3)" class="tab-pane" [ngClass]="{'active': isTabVisible(3)}">
+      <form-validations></form-validations>
+    </div>
+    <div *ngIf="isTabVisible(4)" class="tab-pane" [ngClass]="{'active': isTabVisible(4)}">
+      dynamic forms will be
+    </div>-->
+  </div>
+</div>

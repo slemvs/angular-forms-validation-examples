@@ -7,13 +7,17 @@ import { AppComponent } from './app.component';
 import { SimpleFormComponent } from './simple-form/simple-form.component';
 import { ComplexFormComponent } from './complex-form/complex-form.component';
 import { FormValidationsComponent } from './form-validations/form-validations.component';
+import { TabsComponent } from './tabs/tabs.component';
+import { Tab } from './tab/tab.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SimpleFormComponent,
     ComplexFormComponent,
-    FormValidationsComponent
+    FormValidationsComponent,
+    TabsComponent,
+    Tab
   ],
   imports: [
     BrowserModule,

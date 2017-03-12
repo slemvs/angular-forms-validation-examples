@@ -1,4 +1,4 @@
-<div class="jumbotron">
+<div>
     <h2>Data Driven (Reactive) Form</h2>
     <!-- Right of the bat, we no longer declare a local variable but use the formGroup directive and set it the complexForm object we defined in the constructor. Throughout the form, we will reference the complexForm root object as can be seen in the submitForm function.-->
     <form [formGroup]="complexForm" (ngSubmit)="submitForm(complexForm.value)">

@@ -1,4 +1,4 @@
-<div class="jumbotron">
+<div>
   <h2>Form w/ Validations</h2>
   <form [formGroup]="complexForm" (ngSubmit)="submitForm(complexForm.value)">
     <div class="form-group" [ngClass]="{'has-error': !complexForm.controls['firstName'].valid && complexForm.controls['firstName'].touched}">
