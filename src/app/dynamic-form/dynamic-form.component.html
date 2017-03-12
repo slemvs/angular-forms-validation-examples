@@ -1,0 +1,29 @@
+<form [formGroup]="dynamicForm">
+    <h2>Dynamic form</h2>
+    <div class="form-group" [class.has-error]="!dynamicForm.controls['code'].valid && dynamicForm.controls['code'].dirty">
+        <label>Code to start with</label>
+        <input type="text" class="form-control" formControlName="code" placeholder="Code to start with">
+        <span *ngIf="dynamicForm.controls['code'].hasError('required') && dynamicForm.controls['code'].dirty" class="label label-danger">Field is required</span>
+        <span *ngIf="dynamicForm.controls['code'].hasError('minlength') && dynamicForm.controls['code'].dirty" class="label label-danger">Minimum 3 charachters required</span>
+    </div>
+    <div class="form-group">
+        <button (click)="addItem$.next()">Add item</button>
+    </div>
+    <div *ngFor="let item of items" class="form-group" [class.has-error]="!dynamicForm.controls['item_'+item.id].valid && dynamicForm.controls['item_'+item.id].dirty">
+        <div class="input-group">
+            <div class="input-group-addon">
+                <label>ID: {{item.id}}</label>
+            </div>
+            <input class="form-control" type="text" [formControlName]="'item_'+item.id" />
+            <div class="input-group-addon">
+                <button (click)="removeItem$.next(item)">Remove</button>
+            </div>
+        </div>
+        <span *ngIf="dynamicForm.controls['item_'+item.id].hasError('startsWith') && dynamicForm.controls['item_'+item.id].dirty" class="label label-danger">
+            Value must starts with "Code" field value
+        </span>
+    </div>
+    <div class="form-group">
+        <button (click)="submit$.next(dynamicForm)" type="submit" class="btn btn-default">Submit</button>
+    </div>
+</form>

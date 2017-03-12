@@ -9,6 +9,7 @@ import { ComplexFormComponent } from './complex-form/complex-form.component';
 import { FormValidationsComponent } from './form-validations/form-validations.component';
 import { TabsComponent } from './tabs/tabs.component';
 import { Tab } from './tab/tab.component';
+import { DynamicFormComponent } from './dynamic-form/dynamic-form.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { Tab } from './tab/tab.component';
     ComplexFormComponent,
     FormValidationsComponent,
     TabsComponent,
-    Tab
+    Tab,
+    DynamicFormComponent
   ],
   imports: [
     BrowserModule,
